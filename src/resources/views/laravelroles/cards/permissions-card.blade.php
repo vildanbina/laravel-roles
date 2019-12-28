@@ -1,3 +1,4 @@
+@permission(config('permission.permissions.view'))
 <div class="col-sm-6 mb-4 d-flex">
     <div class="card">
         <div class="card-header bg-default">
@@ -90,3 +91,4 @@
         </div>
     </div>
 </div>
+@endpermission

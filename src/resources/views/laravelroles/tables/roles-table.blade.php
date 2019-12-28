@@ -1,3 +1,4 @@
+@permission(config('permission.roles.view'))
 @php
     $tableType = 'normal';
     if(isset($isDeletedRoles)) {
@@ -40,6 +41,7 @@
                 </div>
             @else
                 @if($deletedRoleItems->count() > 0)
+                    @permission(config('permission.roles.create') .'|'.config('permission.roles.deleted'))
                     <div class="btn-group pull-right btn-group-xs">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-ellipsis-v fa-fw" aria-hidden="true"></i>
@@ -48,10 +50,13 @@
                             </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
+                            @permission(config('permission.roles.edit'))
                             <a class="dropdown-item" href="{{ route('laravelroles::roles.create') }}">
                                 <i class="fa fa-fw fa-plus" aria-hidden="true"></i>
                                 {!! trans('laravelroles.buttons.create-new-role') !!}
                             </a>
+                            @endpermission
+                            @permission(config('permission.roles.deleted'))
                             <a class="dropdown-item" href="{{ route('laravelroles::roles-deleted') }}">
                                 <i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>
                                 {!! trans('laravelroles.buttons.show-deleted-roles') !!}
@@ -59,15 +64,19 @@
                                     {{ $deletedRoleItems->count() }}
                                 </span>
                             </a>
+                            @endpermission
                         </div>
                     </div>
+                    @endpermission
                 @else
+                    @permission(config('permission.roles.create'))
                     <div class="float-right">
                         <a class="btn btn-sm" href="{{ route('laravelroles::roles.create') }}">
                             <i class="fa fa-fw fa-plus" aria-hidden="true"></i>
                             {!! trans('laravelroles.buttons.create-new-role') !!}
                         </a>
                     </div>
+                    @endpermission
                 @endif
             @endisset
         </div>
@@ -76,3 +85,5 @@
         @include('laravelroles::laravelroles.tables.role-items-table', ['tabletype' => $tableType, 'items' => $tableItems])
     </div>
 </div>
+
+@endpermission

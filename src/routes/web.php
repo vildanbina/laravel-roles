@@ -7,9 +7,9 @@
 |
 */
 Route::group([
-    'middleware'    => ['web'],
-    'as'            => 'laravelroles::',
-    'namespace'     => 'bexvibi\LaravelRoles\App\Http\Controllers',
+    'middleware' => ['web', 'auth', 'activity', 'checkblocked', 'role.mw'],
+    'as' => 'laravelroles::',
+    'namespace' => 'bexvibi\LaravelRoles\App\Http\Controllers',
     'prefix' => 'admin'
 ], function () {
 

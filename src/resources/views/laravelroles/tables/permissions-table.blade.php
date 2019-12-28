@@ -1,3 +1,4 @@
+@permission(config('permission.permissions.view'))
 @php
     $tableType = 'normal';
     if(isset($isDeletedPermissions)) {
@@ -40,6 +41,7 @@
                 </div>
             @else
                 @if($deletedPermissionsItems->count() > 0)
+                    @permission(config('permission.permissions.create') .'|'.config('permission.permissions.deleted'))
                     <div class="btn-group pull-right btn-group-xs">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-ellipsis-v fa-fw" aria-hidden="true"></i>
@@ -48,10 +50,13 @@
                             </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
+                            @permission(config('permission.permissions.create'))
                             <a class="dropdown-item" href="{{ route('laravelroles::permissions.create') }}">
                                 <i class="fa fa-fw fa-plus" aria-hidden="true"></i>
                                 {!! trans('laravelroles.buttons.create-new-permission') !!}
                             </a>
+                            @endpermission
+                            @permission(config('permission.permissions.deleted'))
                             <a class="dropdown-item" href="{{ route('laravelroles::permissions-deleted') }}">
                                 <i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>
                                 {!! trans('laravelroles.buttons.show-deleted-permissions') !!}
@@ -59,15 +64,19 @@
                                     {{ $deletedPermissionsItems->count() }}
                                 </span>
                             </a>
+                            @endpermission
                         </div>
                     </div>
+                    @endpermission
                 @else
+                    @permission(config('permission.permissions.create'))
                     <div class="float-right">
                         <a class="btn btn-sm" href="{{ route('laravelroles::permissions.create') }}">
                             <i class="fa fa-fw fa-plus" aria-hidden="true"></i>
                             {!! trans('laravelroles.buttons.create-new-permission') !!}
                         </a>
                     </div>
+                    @endpermission
                 @endif
             @endisset
         </div>
@@ -76,3 +85,4 @@
         @include('laravelroles::laravelroles.tables.permission-items-table', ['tabletype' => $tableType, 'items' => $tableItems])
     </div>
 </div>
+@endpermission

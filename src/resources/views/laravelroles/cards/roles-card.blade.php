@@ -1,3 +1,4 @@
+@permission(config('permission.roles.view'))
 <div class="col-sm-6 mb-4 d-flex">
     <div class="card">
         <div class="card-header bg-default">
@@ -53,7 +54,7 @@
                                 </div>
                             </div>
                             @if($item['users']->count() > 0 || $item['permissions']->count() > 0)
-                                <div id="collapse_roles_{{ $itemKey }}" class="collapse" data-parent="#accordion_roles_{{ $itemKey }}" >
+                                <div id="collapse_roles_{{ $itemKey }}" class="collapse" data-parent="#accordion_roles_{{ $itemKey }}">
 
                                     @if($item['users']->count() > 0)
                                         <table class="table table-striped table-sm mt-3">
@@ -61,20 +62,20 @@
                                                 {!! trans('laravelroles.cards.role-card.table-users-caption', ['role' => $item['role']->name]) !!}
                                             </caption>
                                             <thead>
-                                                <tr>
-                                                    <th>{!! trans('laravelroles.cards.role-card.user-id') !!}</th>
-                                                    <th>{!! trans('laravelroles.cards.role-card.user-name') !!}</th>
-                                                    <th>{!! trans('laravelroles.cards.role-card.user-email') !!}</th>
-                                                </tr>
+                                            <tr>
+                                                <th>{!! trans('laravelroles.cards.role-card.user-id') !!}</th>
+                                                <th>{!! trans('laravelroles.cards.role-card.user-name') !!}</th>
+                                                <th>{!! trans('laravelroles.cards.role-card.user-email') !!}</th>
+                                            </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($item['users'] as $itemUserKey => $itemUser)
-                                                    <tr>
-                                                        <td>{{ $itemUser->id }}</td>
-                                                        <td>{{ $itemUser->name }}</td>
-                                                        <td>{{ $itemUser->email }}</td>
-                                                    </tr>
-                                                @endforeach
+                                            @foreach($item['users'] as $itemUserKey => $itemUser)
+                                                <tr>
+                                                    <td>{{ $itemUser->id }}</td>
+                                                    <td>{{ $itemUser->name }}</td>
+                                                    <td>{{ $itemUser->email }}</td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     @endif
@@ -84,18 +85,18 @@
                                                 {!! trans('laravelroles.cards.role-card.table-permissions-caption', ['role' => $item['role']->name]) !!}
                                             </caption>
                                             <thead>
-                                                <tr>
-                                                    <th>{!! trans('laravelroles.cards.role-card.permissions-id') !!}</th>
-                                                    <th>{!! trans('laravelroles.cards.role-card.permissions-name') !!}</th>
-                                                </tr>
+                                            <tr>
+                                                <th>{!! trans('laravelroles.cards.role-card.permissions-id') !!}</th>
+                                                <th>{!! trans('laravelroles.cards.role-card.permissions-name') !!}</th>
+                                            </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($item['permissions'] as $itemUserKey => $itemUser)
-                                                    <tr>
-                                                        <td>{{ $itemUser->id }}</td>
-                                                        <td>{{ $itemUser->name }}</td>
-                                                    </tr>
-                                                @endforeach
+                                            @foreach($item['permissions'] as $itemUserKey => $itemUser)
+                                                <tr>
+                                                    <td>{{ $itemUser->id }}</td>
+                                                    <td>{{ $itemUser->name }}</td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     @endif
@@ -112,3 +113,4 @@
         </div>
     </div>
 </div>
+@endpermission

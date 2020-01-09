@@ -51,7 +51,7 @@ trait HasRoleAndPermission
      * Check if the user has a role or roles.
      *
      * @param int|string|array $role
-     * @param bool             $all
+     * @param bool $all
      *
      * @return bool
      */
@@ -125,14 +125,15 @@ trait HasRoleAndPermission
      *
      * @return null|bool
      */
-    public function attachRole($role)
+    public function attachRole($roles)
     {
-        if ($this->getRoles()->contains($role)) {
-            return true;
-        }
         $this->roles = null;
-
-        return $this->roles()->attach($role);
+        foreach ($roles as $role) {
+            if (!$this->getRoles()->contains($role)) {
+                $this->roles()->attach($role);
+            }
+        }
+        return;
     }
 
     /**
@@ -231,7 +232,7 @@ trait HasRoleAndPermission
      * Check if the user has a permission or permissions.
      *
      * @param int|string|array $permission
-     * @param bool             $all
+     * @param bool $all
      *
      * @return bool
      */
@@ -302,8 +303,8 @@ trait HasRoleAndPermission
      * Check if the user is allowed to manipulate with entity.
      *
      * @param string $providedPermission
-     * @param Model  $entity
-     * @param bool   $owner
+     * @param Model $entity
+     * @param bool $owner
      * @param string $ownerColumn
      *
      * @return bool
@@ -325,7 +326,7 @@ trait HasRoleAndPermission
      * Check if the user is allowed to manipulate with provided entity.
      *
      * @param string $providedPermission
-     * @param Model  $entity
+     * @param Model $entity
      *
      * @return bool
      */
@@ -406,7 +407,7 @@ trait HasRoleAndPermission
      */
     private function isPretendEnabled()
     {
-        return (bool) config('roles.pretend.enabled');
+        return (bool)config('roles.pretend.enabled');
     }
 
     /**
@@ -418,7 +419,7 @@ trait HasRoleAndPermission
      */
     private function pretend($option)
     {
-        return (bool) config('roles.pretend.options.'.$option);
+        return (bool)config('roles.pretend.options.' . $option);
     }
 
     /**

@@ -129,13 +129,13 @@
                     @endif
                     @if($tabletype == 'normal')
                         <td>
-                            <a class="btn btn-sm btn-outline-info btn-block" href="{{ route('laravelroles::permissions.show', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-permission') }}">
+                            <a class="btn btn-sm btn-outline-info btn-block btn-rounded" href="{{ route('laravelroles::permissions.show', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-permission') }}">
                                 {!! trans("laravelroles.buttons.show") !!}
                             </a>
                         </td>
                         @permission(config('permission.permissions.edit'))
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary btn-block" href="{{ route('laravelroles::permissions.edit', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.edit-permission') }}">
+                            <a class="btn btn-sm btn-outline-secondary btn-block btn-rounded" href="{{ route('laravelroles::permissions.edit', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.edit-permission') }}">
                                 {!! trans("laravelroles.buttons.edit") !!}
                             </a>
                         </td>

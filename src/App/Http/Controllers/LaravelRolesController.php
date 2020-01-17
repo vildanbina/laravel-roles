@@ -100,7 +100,7 @@ class LaravelRolesController extends Controller
         $rolePermissions = $request->get('permissions');
         $role = $this->updateRoleWithPermissions($id, $roleData, $rolePermissions);
 
-        return redirect()->route('laravelroles::roles.index')
+        return redirect()/*->route('laravelroles::roles.index')*/->back()
             ->with('success', trans('laravelroles.flash-messages.role-updated', ['role' => $role->name]));
     }
 

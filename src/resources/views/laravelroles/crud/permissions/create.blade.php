@@ -44,7 +44,7 @@
                     <div class="card-header">
                         {!! trans('laravelroles.titles.create-permission') !!}
                         <div class="pull-right">
-                            <a href="{{ route('laravelroles::roles.index') }}" class="btn btn-outline-secondary btn-sm float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-roles') }}">
+                            <a href="{{ route('laravelroles::roles.index') }}" class="btn btn-outline-secondary btn-rounded btn-sm float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-roles') }}">
                                 <i class="fa fa-fw fa-reply-all" aria-hidden="true"></i>
                                 {!! trans('laravelroles.buttons.back-to-roles') !!}
                             </a>

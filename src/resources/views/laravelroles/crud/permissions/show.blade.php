@@ -51,12 +51,12 @@
                             </span>
                             <div class="pull-right">
                                 @isset($typeDeleted)
-                                    <a href="{{ route('laravelroles::permissions-deleted') }}" class="btn btn-outline-danger btn-sm float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-permissions-deleted') }}">
+                                    <a href="{{ route('laravelroles::permissions-deleted') }}" class="btn btn-outline-danger  btn-rounded btn-sm float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-permissions-deleted') }}">
                                         <i class="fa fa-fw fa-reply-all" aria-hidden="true"></i>
                                         {!! trans('laravelroles.buttons.back-to-permissions-deleted') !!}
                                     </a>
                                 @else
-                                    <a href="{{ route('laravelroles::roles.index') }}" class="btn btn-outline-secondary btn-sm float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-permissions') }}">
+                                    <a href="{{ route('laravelroles::roles.index') }}" class="btn btn-outline-secondary btn-sm btn-rounded float-right" data-toggle="tooltip" data-placement="left" title="{{ trans('laravelroles.tooltips.back-permissions') }}">
                                         <i class="fa fa-fw fa-reply-all" aria-hidden="true"></i>
                                         {!! trans('laravelroles.buttons.back-to-permissions') !!}
                                     </a>
@@ -241,16 +241,16 @@
                             @endisset
                         </ul>
                         <div class="row">
-                            <div class="col-sm-6 mt-3">
+                            <div class="col-sm-2 mt-3">
                                 @isset($typeDeleted)
                                     @include('laravelroles::laravelroles.forms.restore-item', ['style' => 'large', 'type' => 'permission', 'item' => $item])
                                 @else
-                                    <a class="btn btn-sm btn-secondary btn-block text-white mb-0" href="{{ route('laravelroles::permissions.edit', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans("laravelroles.tooltips.edit-permission") }}">
+                                    <a class="btn btn-sm btn-info btn-rounded btn-block text-white mb-0" href="{{ route('laravelroles::permissions.edit', $item['permission']->id) }}" data-toggle="tooltip" title="{{ trans("laravelroles.tooltips.edit-permission") }}">
                                         {!! trans("laravelroles.buttons.edit-larger") !!}
                                     </a>
                                 @endisset
                             </div>
-                            <div class="col-sm-6 mt-3">
+                            <div class="col-sm-2 mt-3">
                                 @isset($typeDeleted)
                                     @include('laravelroles::laravelroles.forms.destroy-sm', ['large' => 'large', 'type' => 'Permission' ,'item' => $item])
                                 @else

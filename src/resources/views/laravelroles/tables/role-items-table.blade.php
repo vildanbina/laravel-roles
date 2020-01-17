@@ -130,14 +130,14 @@
                     @if($tabletype == 'normal')
                         @permission(config('permission.roles.view'))
                         <td>
-                            <a class="btn btn-sm btn-outline-info btn-block" href="{{ route('laravelroles::roles.show', $item['role']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-role') }}">
+                            <a class="btn btn-sm btn-outline-info btn-block btn-rounded" href="{{ route('laravelroles::roles.show', $item['role']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-role') }}">
                                 {!! trans("laravelroles.buttons.show") !!}
                             </a>
                         </td>
                         @endpermission
                         @permission(config('permission.roles.edit'))
                         <td>
-                            <a class="btn btn-sm btn-outline-secondary btn-block" href="{{ route('laravelroles::roles.edit', $item['role']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.edit-role') }}">
+                            <a class="btn btn-sm btn-outline-secondary btn-block btn-rounded" href="{{ route('laravelroles::roles.edit', $item['role']->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.edit-role') }}">
                                 {!! trans("laravelroles.buttons.edit") !!}
                             </a>
                         </td>
@@ -150,7 +150,7 @@
                     @endif
                     @if($tabletype == 'deleted')
                         <td>
-                            <a class="btn btn-sm btn-outline-info btn-block" href="{{ route('laravelroles::role-show-deleted', $item->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-deleted-role') }}">
+                            <a class="btn btn-sm btn-outline-info btn-block btn-rounded" href="{{ route('laravelroles::role-show-deleted', $item->id) }}" data-toggle="tooltip" title="{{ trans('laravelroles.tooltips.show-deleted-role') }}">
                                 {!! trans("laravelroles.buttons.show-deleted-role") !!}
                                 <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
                             </a>

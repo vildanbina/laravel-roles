@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles;
+namespace vildanbina\LaravelRoles;
 
 use Illuminate\Support\Facades\Facade;
 

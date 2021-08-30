@@ -1,8 +1,8 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Test;
+namespace vildanbina\LaravelRoles\Test;
 
-use bexvibi\LaravelRoles\RolesServiceProvider;
+use vildanbina\LaravelRoles\RolesServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 class TestCase extends OrchestraTestCase
@@ -12,7 +12,7 @@ class TestCase extends OrchestraTestCase
      *
      * @param \Illuminate\Foundation\Application $app
      *
-     * @return bexvibi\LaravelRoles\RolesServiceProvider
+     * @return vildanbina\LaravelRoles\RolesServiceProvider
      */
     protected function getPackageProviders($app)
     {

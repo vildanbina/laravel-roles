@@ -1,13 +1,13 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Models;
+namespace vildanbina\LaravelRoles\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use bexvibi\LaravelRoles\Contracts\RoleHasRelations as RoleHasRelationsContract;
-use bexvibi\LaravelRoles\Traits\DatabaseTraits;
-use bexvibi\LaravelRoles\Traits\RoleHasRelations;
-use bexvibi\LaravelRoles\Traits\Slugable;
+use vildanbina\LaravelRoles\Contracts\RoleHasRelations as RoleHasRelationsContract;
+use vildanbina\LaravelRoles\Traits\DatabaseTraits;
+use vildanbina\LaravelRoles\Traits\RoleHasRelations;
+use vildanbina\LaravelRoles\Traits\Slugable;
 
 class Role extends Model implements RoleHasRelationsContract
 {

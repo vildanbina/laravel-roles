@@ -1,11 +1,11 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Controllers;
+namespace vildanbina\LaravelRoles\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
-use bexvibi\LaravelRoles\Traits\RolesUsageAuthTrait;
+use vildanbina\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
+use vildanbina\LaravelRoles\Traits\RolesUsageAuthTrait;
 
 class LaravelRolesDeletedController extends Controller
 {

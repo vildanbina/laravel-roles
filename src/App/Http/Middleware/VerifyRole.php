@@ -1,11 +1,11 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Middleware;
+namespace vildanbina\LaravelRoles\App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\App\Exceptions\RoleDeniedException;
+use vildanbina\LaravelRoles\App\Exceptions\RoleDeniedException;
 
 class VerifyRole
 {

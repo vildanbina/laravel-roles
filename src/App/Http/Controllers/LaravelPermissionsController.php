@@ -1,14 +1,14 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Controllers;
+namespace vildanbina\LaravelRoles\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\App\Http\Requests\StorePermissionRequest;
-use bexvibi\LaravelRoles\App\Http\Requests\UpdatePermissionRequest;
-use bexvibi\LaravelRoles\App\Services\PermissionFormFields;
-use bexvibi\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
-use bexvibi\LaravelRoles\Traits\RolesUsageAuthTrait;
+use vildanbina\LaravelRoles\App\Http\Requests\StorePermissionRequest;
+use vildanbina\LaravelRoles\App\Http\Requests\UpdatePermissionRequest;
+use vildanbina\LaravelRoles\App\Services\PermissionFormFields;
+use vildanbina\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
+use vildanbina\LaravelRoles\Traits\RolesUsageAuthTrait;
 
 class LaravelPermissionsController extends Controller
 {
@@ -43,7 +43,7 @@ class LaravelPermissionsController extends Controller
     /**
      * Store a newly created permission in storage.
      *
-     * @param \bexvibi\LaravelRoles\App\Http\Requests\StorePermissionRequest $request
+     * @param \vildanbina\LaravelRoles\App\Http\Requests\StorePermissionRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -88,7 +88,7 @@ class LaravelPermissionsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \bexvibi\LaravelRoles\App\Http\Requests\UpdatePermissionRequest $request
+     * @param \vildanbina\LaravelRoles\App\Http\Requests\UpdatePermissionRequest $request
      * @param int                                                                  $id
      *
      * @return \Illuminate\Http\Response

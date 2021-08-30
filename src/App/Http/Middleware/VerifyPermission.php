@@ -1,11 +1,11 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Middleware;
+namespace vildanbina\LaravelRoles\App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\App\Exceptions\PermissionDeniedException;
+use vildanbina\LaravelRoles\App\Exceptions\PermissionDeniedException;
 
 class VerifyPermission
 {
@@ -31,7 +31,7 @@ class VerifyPermission
      * @param \Closure   $next
      * @param int|string $permission
      *
-     * @throws \bexvibi\LaravelRoles\App\Exceptions\PermissionDeniedException
+     * @throws \vildanbina\LaravelRoles\App\Exceptions\PermissionDeniedException
      *
      * @return mixed
      */

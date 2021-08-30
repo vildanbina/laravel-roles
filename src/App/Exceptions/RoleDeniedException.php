@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Exceptions;
+namespace vildanbina\LaravelRoles\App\Exceptions;
 
 class RoleDeniedException extends AccessDeniedException
 {

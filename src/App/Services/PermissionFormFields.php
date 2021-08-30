@@ -1,8 +1,8 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Services;
+namespace vildanbina\LaravelRoles\App\Services;
 
-use bexvibi\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
+use vildanbina\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
 
 class PermissionFormFields
 {

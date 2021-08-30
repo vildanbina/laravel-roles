@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **First take a look at the following**
-1. https://github.com/bexvibi/laravel-roles#opening-an-issue 
-2. https://github.com/bexvibi/laravel-roles/issues?q=is%3Aissue+is%3Aclosed
+1. https://github.com/vildanbina/laravel-roles#opening-an-issue 
+2. https://github.com/vildanbina/laravel-roles/issues?q=is%3Aissue+is%3Aclosed
 
 **Please describe what you are needing help with below:**

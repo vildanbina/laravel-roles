@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Requests;
+namespace vildanbina\LaravelRoles\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

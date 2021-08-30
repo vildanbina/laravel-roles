@@ -1,11 +1,11 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Controllers\Api;
+namespace vildanbina\LaravelRoles\App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use bexvibi\LaravelRoles\App\Http\Requests\StoreRoleRequest;
-use bexvibi\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
-use bexvibi\LaravelRoles\Traits\RolesUsageAuthTrait;
+use vildanbina\LaravelRoles\App\Http\Requests\StoreRoleRequest;
+use vildanbina\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
+use vildanbina\LaravelRoles\Traits\RolesUsageAuthTrait;
 
 class LaravelRolesApiController extends Controller
 {

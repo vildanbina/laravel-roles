@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Traits;
+namespace vildanbina\LaravelRoles\Traits;
 
 trait RolesUsageAuthTrait
 {

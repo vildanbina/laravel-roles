@@ -39,14 +39,14 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you want, you can replace default models from this package by models
-    | you created. Have a look at `bexvibi\LaravelRoles\Models\Role` model and
-    | `bexvibi\LaravelRoles\Models\Permission` model.
+    | you created. Have a look at `vildanbina\LaravelRoles\Models\Role` model and
+    | `vildanbina\LaravelRoles\Models\Permission` model.
     |
     */
 
     'models' => [
-        'role'          => env('ROLES_DEFAULT_ROLE_MODEL', bexvibi\LaravelRoles\Models\Role::class),
-        'permission'    => env('ROLES_DEFAULT_PERMISSION_MODEL', bexvibi\LaravelRoles\Models\Permission::class),
+        'role'          => env('ROLES_DEFAULT_ROLE_MODEL', vildanbina\LaravelRoles\Models\Role::class),
+        'permission'    => env('ROLES_DEFAULT_PERMISSION_MODEL', vildanbina\LaravelRoles\Models\Permission::class),
         'defaultUser'   => env('ROLES_DEFAULT_USER_MODEL', config('auth.providers.users.model')),
     ],
 

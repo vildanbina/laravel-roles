@@ -1,13 +1,13 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Models;
+namespace vildanbina\LaravelRoles\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use bexvibi\LaravelRoles\Contracts\PermissionHasRelations as PermissionHasRelationsContract;
-use bexvibi\LaravelRoles\Traits\DatabaseTraits;
-use bexvibi\LaravelRoles\Traits\PermissionHasRelations;
-use bexvibi\LaravelRoles\Traits\Slugable;
+use vildanbina\LaravelRoles\Contracts\PermissionHasRelations as PermissionHasRelationsContract;
+use vildanbina\LaravelRoles\Traits\DatabaseTraits;
+use vildanbina\LaravelRoles\Traits\PermissionHasRelations;
+use vildanbina\LaravelRoles\Traits\Slugable;
 
 class Permission extends Model implements PermissionHasRelationsContract
 {

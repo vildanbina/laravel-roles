@@ -58,7 +58,7 @@ From your projects root folder in terminal run:
 Laravel 5.8 and up use:
 
 ```
-    composer require bexvibi/laravel-roles
+    composer require vildanbina/laravel-roles
 ```
 
  
@@ -80,7 +80,7 @@ Add the package to your application service providers in `config/app.php` file.
     /**
      * Third Party Service Providers...
      */
-    bexvibi\LaravelRoles\RolesServiceProvider::class,
+    vildanbina\LaravelRoles\RolesServiceProvider::class,
 
 ],
 ```
@@ -101,7 +101,7 @@ Add the package to your application service providers in `config/app.php` file.
 
 1. Include `HasRoleAndPermission` trait and also implement `HasRoleAndPermission` contract inside your `User` model. See example below.
 
-2. Include `use bexvibi\LaravelRoles\Traits\HasRoleAndPermission;` in the top of your `User` model below the namespace and implement the `HasRoleAndPermission` trait. See example below.
+2. Include `use vildanbina\LaravelRoles\Traits\HasRoleAndPermission;` in the top of your `User` model below the namespace and implement the `HasRoleAndPermission` trait. See example below.
 
 Example `User` model Trait And Contract:
 
@@ -113,7 +113,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use bexvibi\LaravelRoles\Traits\HasRoleAndPermission;
+use vildanbina\LaravelRoles\Traits\HasRoleAndPermission;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -231,7 +231,7 @@ php artisan db:seed
 ---
 
 ## Migrate from bican roles
-If you migrate from bican/roles to bexvibi/LaravelRoles you will need to update a few things.
+If you migrate from bican/roles to vildanbina/LaravelRoles you will need to update a few things.
 - Change all calls to `can`, `canOne` and `canAll` to `hasPermission`, `hasOnePermission`, `hasAllPermissions`.
 - Change all calls to `is`, `isOne` and `isAll` to `hasRole`, `hasOneRole`, `hasAllRoles`.
 
@@ -474,7 +474,7 @@ There are four Blade extensions. Basically, it is replacement for classic if sta
 
 ### Middleware
 This package comes with `VerifyRole`, `VerifyPermission` and `VerifyLevel` middleware.
-The middleware aliases are already registered in `\bexvibi\LaravelRoles\RolesServiceProvider` as of 1.7.
+The middleware aliases are already registered in `\vildanbina\LaravelRoles\RolesServiceProvider` as of 1.7.
 You can optionally add them inside your `app/Http/Kernel.php` file with your own aliases like outlined below:
 
 ```php
@@ -493,9 +493,9 @@ protected $routeMiddleware = [
     'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
     'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-    'role'          => \bexvibi\LaravelRoles\Middleware\VerifyRole::class,
-    'permission'    => \bexvibi\LaravelRoles\Middleware\VerifyPermission::class,
-    'level'         => \bexvibi\LaravelRoles\Middleware\VerifyLevel::class,
+    'role'          => \vildanbina\LaravelRoles\Middleware\VerifyRole::class,
+    'permission'    => \vildanbina\LaravelRoles\Middleware\VerifyPermission::class,
+    'level'         => \vildanbina\LaravelRoles\Middleware\VerifyLevel::class,
 ];
 ```
 
@@ -524,7 +524,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 
 ```
 
-It throws `\bexvibi\LaravelRoles\App\Exceptions\RoleDeniedException`, `\bexvibi\LaravelRoles\App\Exceptions\PermissionDeniedException` or `\bexvibi\LaravelRoles\App\Exceptions\LevelDeniedException` exceptions if it goes wrong.
+It throws `\vildanbina\LaravelRoles\App\Exceptions\RoleDeniedException`, `\vildanbina\LaravelRoles\App\Exceptions\PermissionDeniedException` or `\vildanbina\LaravelRoles\App\Exceptions\LevelDeniedException` exceptions if it goes wrong.
 
 You can catch these exceptions inside `app/Exceptions/Handler.php` file and do whatever you want.
 
@@ -539,10 +539,10 @@ You can catch these exceptions inside `app/Exceptions/Handler.php` file and do w
     public function render($request, Exception $exception)
     {
 
-        $userLevelCheck = $exception instanceof \bexvibi\LaravelRoles\App\Exceptions\RoleDeniedException ||
-            $exception instanceof \bexvibi\LaravelRoles\App\Exceptions\RoleDeniedException ||
-            $exception instanceof \bexvibi\LaravelRoles\App\Exceptions\PermissionDeniedException ||
-            $exception instanceof \bexvibi\LaravelRoles\App\Exceptions\LevelDeniedException;
+        $userLevelCheck = $exception instanceof \vildanbina\LaravelRoles\App\Exceptions\RoleDeniedException ||
+            $exception instanceof \vildanbina\LaravelRoles\App\Exceptions\RoleDeniedException ||
+            $exception instanceof \vildanbina\LaravelRoles\App\Exceptions\PermissionDeniedException ||
+            $exception instanceof \vildanbina\LaravelRoles\App\Exceptions\LevelDeniedException;
 
         if ($userLevelCheck) {
 
@@ -566,7 +566,7 @@ You can catch these exceptions inside `app/Exceptions/Handler.php` file and do w
 * You can change connection for models, slug separator, models path and there is also a handy pretend feature.
 * There are many configurable options which have been extended to be able to configured via `.env` file variables.
 * Editing the configuration file directly may not needed becuase of this.
-* See config file: [roles.php](https://github.com/bexvibi/laravel-roles/blob/master/src/config/roles.php).
+* See config file: [roles.php](https://github.com/vildanbina/laravel-roles/blob/master/src/config/roles.php).
 
 ```php
 
@@ -611,14 +611,14 @@ return [
     |--------------------------------------------------------------------------
     |
     | If you want, you can replace default models from this package by models
-    | you created. Have a look at `bexvibi\LaravelRoles\Models\Role` model and
-    | `bexvibi\LaravelRoles\Models\Permission` model.
+    | you created. Have a look at `vildanbina\LaravelRoles\Models\Role` model and
+    | `vildanbina\LaravelRoles\Models\Permission` model.
     |
     */
 
     'models' => [
-        'role'          => env('ROLES_DEFAULT_ROLE_MODEL', bexvibi\LaravelRoles\Models\Role::class),
-        'permission'    => env('ROLES_DEFAULT_PERMISSION_MODEL', bexvibi\LaravelRoles\Models\Permission::class),
+        'role'          => env('ROLES_DEFAULT_ROLE_MODEL', vildanbina\LaravelRoles\Models\Role::class),
+        'permission'    => env('ROLES_DEFAULT_PERMISSION_MODEL', vildanbina\LaravelRoles\Models\Permission::class),
         'defaultUser'   => env('ROLES_DEFAULT_USER_MODEL', config('auth.providers.users.model')),
     ],
 
@@ -788,8 +788,8 @@ return [
 ```
 # Roles Default Models
 ROLES_DEFAULT_USER_MODEL=App\User
-ROLES_DEFAULT_ROLE_MODEL=bexvibi\LaravelRoles\Models\Role
-ROLES_DEFAULT_PERMISSION_MODEL=bexvibi\LaravelRoles\Models\Permission
+ROLES_DEFAULT_ROLE_MODEL=vildanbina\LaravelRoles\Models\Role
+ROLES_DEFAULT_PERMISSION_MODEL=vildanbina\LaravelRoles\Models\Permission
 
 # Roles database information
 ROLES_DATABASE_CONNECTION=null
@@ -826,39 +826,39 @@ ROLES_GUI_DATATABLES_JS_ENABLED=false
 ```
 
 ## More Information
-For more information, please have a look at [HasRoleAndPermission](https://github.com/bexvibi/laravel-roles/blob/master/src/Contracts/HasRoleAndPermission.php) contract.
+For more information, please have a look at [HasRoleAndPermission](https://github.com/vildanbina/laravel-roles/blob/master/src/Contracts/HasRoleAndPermission.php) contract.
 
 ## Optional GUI Routes
 ```
 +--------+-----------+---------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------------+
 | Domain | Method    | URI                             | Name                                          | Action                                                                                                          | Middleware          |
 +--------+-----------+---------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------------+
-|        | GET|HEAD  | permission-deleted/{id}         | laravelroles::permission-show-deleted         | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@show                         | web,auth,role:admin |
-|        | DELETE    | permission-destroy/{id}         | laravelroles::permission-item-destroy         | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@destroy                      | web,auth,role:admin |
-|        | PUT       | permission-restore/{id}         | laravelroles::permission-restore              | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@restorePermission            | web,auth,role:admin |
-|        | POST      | permissions                     | laravelroles::permissions.store               | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@store                               | web,auth,role:admin |
-|        | GET|HEAD  | permissions                     | laravelroles::permissions.index               | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@index                               | web,auth,role:admin |
-|        | GET|HEAD  | permissions-deleted             | laravelroles::permissions-deleted             | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@index                        | web,auth,role:admin |
-|        | DELETE    | permissions-deleted-destroy-all | laravelroles::destroy-all-deleted-permissions | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@destroyAllDeletedPermissions | web,auth,role:admin |
-|        | POST      | permissions-deleted-restore-all | laravelroles::permissions-deleted-restore-all | bexvibi\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@restoreAllDeletedPermissions | web,auth,role:admin |
-|        | GET|HEAD  | permissions/create              | laravelroles::permissions.create              | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@create                              | web,auth,role:admin |
-|        | PUT|PATCH | permissions/{permission}        | laravelroles::permissions.update              | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@update                              | web,auth,role:admin |
-|        | GET|HEAD  | permissions/{permission}        | laravelroles::permissions.show                | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@show                                | web,auth,role:admin |
-|        | DELETE    | permissions/{permission}        | laravelroles::permissions.destroy             | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@destroy                             | web,auth,role:admin |
-|        | GET|HEAD  | permissions/{permission}/edit   | laravelroles::permissions.edit                | bexvibi\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@edit                                | web,auth,role:admin |
-|        | GET|HEAD  | role-deleted/{id}               | laravelroles::role-show-deleted               | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@show                               | web,auth,role:admin |
-|        | DELETE    | role-destroy/{id}               | laravelroles::role-item-destroy               | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroy                            | web,auth,role:admin |
-|        | PUT       | role-restore/{id}               | laravelroles::role-restore                    | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreRole                        | web,auth,role:admin |
-|        | POST      | roles                           | laravelroles::roles.store                     | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@store                                     | web,auth,role:admin |
-|        | GET|HEAD  | roles                           | laravelroles::roles.index                     | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@index                                     | web,auth,role:admin |
-|        | GET|HEAD  | roles-deleted                   | laravelroles::roles-deleted                   | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@index                              | web,auth,role:admin |
-|        | DELETE    | roles-deleted-destroy-all       | laravelroles::destroy-all-deleted-roles       | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroyAllDeletedRoles             | web,auth,role:admin |
-|        | POST      | roles-deleted-restore-all       | laravelroles::roles-deleted-restore-all       | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreAllDeletedRoles             | web,auth,role:admin |
-|        | GET|HEAD  | roles/create                    | laravelroles::roles.create                    | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@create                                    | web,auth,role:admin |
-|        | DELETE    | roles/{role}                    | laravelroles::roles.destroy                   | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@destroy                                   | web,auth,role:admin |
-|        | PUT|PATCH | roles/{role}                    | laravelroles::roles.update                    | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@update                                    | web,auth,role:admin |
-|        | GET|HEAD  | roles/{role}                    | laravelroles::roles.show                      | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@show                                      | web,auth,role:admin |
-|        | GET|HEAD  | roles/{role}/edit               | laravelroles::roles.edit                      | bexvibi\LaravelRoles\App\Http\Controllers\LaravelRolesController@edit                                      | web,auth,role:admin |
+|        | GET|HEAD  | permission-deleted/{id}         | laravelroles::permission-show-deleted         | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@show                         | web,auth,role:admin |
+|        | DELETE    | permission-destroy/{id}         | laravelroles::permission-item-destroy         | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@destroy                      | web,auth,role:admin |
+|        | PUT       | permission-restore/{id}         | laravelroles::permission-restore              | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@restorePermission            | web,auth,role:admin |
+|        | POST      | permissions                     | laravelroles::permissions.store               | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@store                               | web,auth,role:admin |
+|        | GET|HEAD  | permissions                     | laravelroles::permissions.index               | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@index                               | web,auth,role:admin |
+|        | GET|HEAD  | permissions-deleted             | laravelroles::permissions-deleted             | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@index                        | web,auth,role:admin |
+|        | DELETE    | permissions-deleted-destroy-all | laravelroles::destroy-all-deleted-permissions | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@destroyAllDeletedPermissions | web,auth,role:admin |
+|        | POST      | permissions-deleted-restore-all | laravelroles::permissions-deleted-restore-all | vildanbina\LaravelRoles\App\Http\Controllers\LaravelpermissionsDeletedController@restoreAllDeletedPermissions | web,auth,role:admin |
+|        | GET|HEAD  | permissions/create              | laravelroles::permissions.create              | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@create                              | web,auth,role:admin |
+|        | PUT|PATCH | permissions/{permission}        | laravelroles::permissions.update              | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@update                              | web,auth,role:admin |
+|        | GET|HEAD  | permissions/{permission}        | laravelroles::permissions.show                | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@show                                | web,auth,role:admin |
+|        | DELETE    | permissions/{permission}        | laravelroles::permissions.destroy             | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@destroy                             | web,auth,role:admin |
+|        | GET|HEAD  | permissions/{permission}/edit   | laravelroles::permissions.edit                | vildanbina\LaravelRoles\App\Http\Controllers\LaravelPermissionsController@edit                                | web,auth,role:admin |
+|        | GET|HEAD  | role-deleted/{id}               | laravelroles::role-show-deleted               | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@show                               | web,auth,role:admin |
+|        | DELETE    | role-destroy/{id}               | laravelroles::role-item-destroy               | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroy                            | web,auth,role:admin |
+|        | PUT       | role-restore/{id}               | laravelroles::role-restore                    | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreRole                        | web,auth,role:admin |
+|        | POST      | roles                           | laravelroles::roles.store                     | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@store                                     | web,auth,role:admin |
+|        | GET|HEAD  | roles                           | laravelroles::roles.index                     | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@index                                     | web,auth,role:admin |
+|        | GET|HEAD  | roles-deleted                   | laravelroles::roles-deleted                   | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@index                              | web,auth,role:admin |
+|        | DELETE    | roles-deleted-destroy-all       | laravelroles::destroy-all-deleted-roles       | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@destroyAllDeletedRoles             | web,auth,role:admin |
+|        | POST      | roles-deleted-restore-all       | laravelroles::roles-deleted-restore-all       | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesDeletedController@restoreAllDeletedRoles             | web,auth,role:admin |
+|        | GET|HEAD  | roles/create                    | laravelroles::roles.create                    | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@create                                    | web,auth,role:admin |
+|        | DELETE    | roles/{role}                    | laravelroles::roles.destroy                   | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@destroy                                   | web,auth,role:admin |
+|        | PUT|PATCH | roles/{role}                    | laravelroles::roles.update                    | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@update                                    | web,auth,role:admin |
+|        | GET|HEAD  | roles/{role}                    | laravelroles::roles.show                      | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@show                                      | web,auth,role:admin |
+|        | GET|HEAD  | roles/{role}/edit               | laravelroles::roles.edit                      | vildanbina\LaravelRoles\App\Http\Controllers\LaravelRolesController@edit                                      | web,auth,role:admin |
 +--------+-----------+---------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------------+
 
 ```
@@ -1038,7 +1038,7 @@ Before opening an issue there are a couple of considerations:
 * **Show that you have made an attempt** to *look into the issue*.
 * **Check** to see if the issue you are *reporting is a duplicate* of a previous reported issue.
 * **Following these instructions show me that you have tried.**
-* If you have a questions send me an email to bexvibi@gmail.com
+* If you have a questions send me an email to vildanbina@gmail.com
 * Need some help, I can do my best on Slack: https://opensourcehelpgroup.slack.com
 * Please be considerate that this is an open source project that I provide to the community for FREE when opening an issue.
 

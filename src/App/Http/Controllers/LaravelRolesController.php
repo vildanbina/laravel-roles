@@ -1,14 +1,14 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Controllers;
+namespace vildanbina\LaravelRoles\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\App\Http\Requests\StoreRoleRequest;
-use bexvibi\LaravelRoles\App\Http\Requests\UpdateRoleRequest;
-use bexvibi\LaravelRoles\App\Services\RoleFormFields;
-use bexvibi\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
-use bexvibi\LaravelRoles\Traits\RolesUsageAuthTrait;
+use vildanbina\LaravelRoles\App\Http\Requests\StoreRoleRequest;
+use vildanbina\LaravelRoles\App\Http\Requests\UpdateRoleRequest;
+use vildanbina\LaravelRoles\App\Services\RoleFormFields;
+use vildanbina\LaravelRoles\Traits\RolesAndPermissionsHelpersTrait;
+use vildanbina\LaravelRoles\Traits\RolesUsageAuthTrait;
 
 class LaravelRolesController extends Controller
 {
@@ -43,7 +43,7 @@ class LaravelRolesController extends Controller
     /**
      * Store a newly created role in storage.
      *
-     * @param \bexvibi\LaravelRoles\App\Http\Requests\StoreRoleRequest $request
+     * @param \vildanbina\LaravelRoles\App\Http\Requests\StoreRoleRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -89,7 +89,7 @@ class LaravelRolesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \bexvibi\LaravelRoles\App\Http\Requests\UpdateRoleRequest $request
+     * @param \vildanbina\LaravelRoles\App\Http\Requests\UpdateRoleRequest $request
      * @param int                                                            $id
      *
      * @return \Illuminate\Http\Response

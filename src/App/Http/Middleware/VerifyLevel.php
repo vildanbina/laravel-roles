@@ -1,11 +1,11 @@
 <?php
 
-namespace bexvibi\LaravelRoles\App\Http\Middleware;
+namespace vildanbina\LaravelRoles\App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use bexvibi\LaravelRoles\App\Exceptions\LevelDeniedException;
+use vildanbina\LaravelRoles\App\Exceptions\LevelDeniedException;
 
 class VerifyLevel
 {
@@ -31,7 +31,7 @@ class VerifyLevel
      * @param \Closure $next
      * @param int      $level
      *
-     * @throws \bexvibi\LaravelRoles\App\Exceptions\LevelDeniedException
+     * @throws \vildanbina\LaravelRoles\App\Exceptions\LevelDeniedException
      *
      * @return mixed
      */

@@ -10,7 +10,7 @@
 Route::group([
     'middleware'    => ['auth:api'],
     'as'            => 'laravelroles::',
-    'namespace'     => 'bexvibi\LaravelRoles\App\Http\Controllers\Api',
+    'namespace'     => 'vildanbina\LaravelRoles\App\Http\Controllers\Api',
     'prefix'        => 'api',
 ], function () {
     Route::apiResource('roles-api', 'LaravelRolesApiController');

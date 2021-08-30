@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Traits;
+namespace vildanbina\LaravelRoles\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use bexvibi\LaravelRoles\Models\Permission;
-use bexvibi\LaravelRoles\Models\Role;
+use vildanbina\LaravelRoles\Models\Permission;
+use vildanbina\LaravelRoles\Models\Role;
 
 trait HasRoleAndPermission
 {
@@ -165,7 +165,7 @@ trait HasRoleAndPermission
     /**
      * Sync roles for a user.
      *
-     * @param array|\bexvibi\LaravelRoles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
+     * @param array|\vildanbina\LaravelRoles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
      *
      * @return array
      */
@@ -389,7 +389,7 @@ trait HasRoleAndPermission
     /**
      * Sync permissions for a user.
      *
-     * @param array|\bexvibi\LaravelRoles\Models\Permission[]|\Illuminate\Database\Eloquent\Collection $permissions
+     * @param array|\vildanbina\LaravelRoles\Models\Permission[]|\Illuminate\Database\Eloquent\Collection $permissions
      *
      * @return array
      */

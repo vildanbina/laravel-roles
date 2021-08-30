@@ -1,5 +1,5 @@
 {
-    "name": "bexvibi/laravel-roles",
+    "name": "vildanbina/laravel-roles",
     "description": "Powerful package for handling roles, permissions, and levels in Laravel. Supports Laravel 5.3 and higher",
     "keywords": [
         "laravel-roles",
@@ -16,7 +16,7 @@
     "authors": [
         {
             "name": "Vildan Bina",
-            "email": "bexvibi@gmail.com"
+            "email": "vildanbina@gmail.com"
         }
     ],
     "require": {
@@ -31,18 +31,18 @@
     },
     "autoload": {
         "psr-4": {
-            "bexvibi\\LaravelRoles\\": "src/"
+            "vildanbina\\LaravelRoles\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "bexvibi\\LaravelRoles\\Test\\": "tests/"
+            "vildanbina\\LaravelRoles\\Test\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "bexvibi\\LaravelRoles\\RolesServiceProvider"
+                "vildanbina\\LaravelRoles\\RolesServiceProvider"
             ]
         }
     },

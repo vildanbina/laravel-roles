@@ -1,6 +1,6 @@
 <?php
 
-namespace bexvibi\LaravelRoles\Database\Seeds;
+namespace vildanbina\LaravelRoles\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 

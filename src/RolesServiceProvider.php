@@ -1,15 +1,15 @@
 <?php
 
-namespace bexvibi\LaravelRoles;
+namespace vildanbina\LaravelRoles;
 
 use Illuminate\Support\ServiceProvider;
-use bexvibi\LaravelRoles\App\Http\Middleware\VerifyLevel;
-use bexvibi\LaravelRoles\App\Http\Middleware\VerifyPermission;
-use bexvibi\LaravelRoles\App\Http\Middleware\VerifyRole;
-use bexvibi\LaravelRoles\Database\Seeds\DefaultConnectRelationshipsSeeder;
-use bexvibi\LaravelRoles\Database\Seeds\DefaultPermissionsTableSeeder;
-use bexvibi\LaravelRoles\Database\Seeds\DefaultRolesTableSeeder;
-use bexvibi\LaravelRoles\Database\Seeds\DefaultUsersTableSeeder;
+use vildanbina\LaravelRoles\App\Http\Middleware\VerifyLevel;
+use vildanbina\LaravelRoles\App\Http\Middleware\VerifyPermission;
+use vildanbina\LaravelRoles\App\Http\Middleware\VerifyRole;
+use vildanbina\LaravelRoles\Database\Seeds\DefaultConnectRelationshipsSeeder;
+use vildanbina\LaravelRoles\Database\Seeds\DefaultPermissionsTableSeeder;
+use vildanbina\LaravelRoles\Database\Seeds\DefaultRolesTableSeeder;
+use vildanbina\LaravelRoles\Database\Seeds\DefaultUsersTableSeeder;
 
 class RolesServiceProvider extends ServiceProvider
 {
